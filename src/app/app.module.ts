@@ -5,19 +5,23 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
 import { NewsContainerComponent } from './Components/news-container/news-container.component';
+import { NewsItemComponent } from './Components/news-item/news-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    NewsContainerComponent
+    NewsContainerComponent,
+    NewsItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
