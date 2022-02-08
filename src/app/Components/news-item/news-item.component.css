@@ -17,14 +17,14 @@
 }
 
 .news-item-light {
-    background-color: rgb(202, 197, 197);
+    background-color: rgb(238, 234, 234);
     justify-content: space-evenly;
-    color: rgb(32, 28, 28);
+    color: rgb(49, 42, 42);
 }
 
 .news-item-dark {
-    background-color: black;
-    color: white;
+    background-color: rgb(61, 53, 53);
+    color: rgb(255, 255, 255);
 }
 
 .news-sub-dark {
