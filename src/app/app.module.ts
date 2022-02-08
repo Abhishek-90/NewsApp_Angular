@@ -8,20 +8,27 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { NewsContainerComponent } from './Components/news-container/news-container.component';
 import { NewsItemComponent } from './Components/news-item/news-item.component';
+import { SettingsPanelComponent } from './Components/settings-panel/settings-panel.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { StoreModule } from '@ngrx/store';
+import { DarkModeReducer } from './Store/DarkMode/Reducers'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     NewsContainerComponent,
-    NewsItemComponent
+    NewsItemComponent,
+    SettingsPanelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    MatSlideToggleModule,
+    StoreModule.forRoot({darkmode: DarkModeReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
