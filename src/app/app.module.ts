@@ -12,6 +12,7 @@ import { SettingsPanelComponent } from './Components/settings-panel/settings-pan
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { StoreModule } from '@ngrx/store';
 import { DarkModeReducer } from './Store/DarkMode/Reducers'
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DarkModeReducer } from './Store/DarkMode/Reducers'
     MatTabsModule,
     MatCardModule,
     MatSlideToggleModule,
-    StoreModule.forRoot({darkmode: DarkModeReducer})
+    StoreModule.forRoot({darkmode: DarkModeReducer}),
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

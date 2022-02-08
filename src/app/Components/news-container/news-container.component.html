@@ -4,4 +4,7 @@
             <app-news-item newsTitle={{getNewsTitle(item)}} newsDescription={{getNewsDescription(item)}} newsAuthor={{getNewsAuthor(item)}} imageUrl={{getNewsImageURl(item)}} newsUrl={{getNewsURL(item)}} date={{getNewsDate(item)}}></app-news-item>
         </div>
     </div>
+    <div class="load-more-btn">
+        <button mat-raised-button color="primary" (click)="loadMore()">Load More</button>
+    </div>
 </div>

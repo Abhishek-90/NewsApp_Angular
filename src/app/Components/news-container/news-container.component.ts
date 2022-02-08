@@ -10,13 +10,14 @@ export class NewsContainerComponent implements OnInit {
   @Input() category:string = "general"
   newsResult: [[]] = [[]] //Defined newsResult as an array of Objects; for result fetched via api call
   url: string = " "
+  page_no: number = 1;
   private temp: [] = []
 
   constructor() { }
 
   ngOnInit(): void {
     
-    this.url = `${C.Endpoint_Top_Headlines}?category=${this.category}&country=${'in'}&apiKey=${C.API_KEY}&pageSize=18`
+    this.url = `${C.Endpoint_Top_Headlines}?category=${this.category}&country=${'in'}&apiKey=${C.API_KEY}&pageSize=18&page=${this.page_no}`
     this.fetchNews(this.url)
       
   }
@@ -45,13 +46,20 @@ export class NewsContainerComponent implements OnInit {
     return item.publishedAt
   }
 
+  loadMore = ():void => {
+    this.page_no += 1
+    this.url = `${C.Endpoint_Top_Headlines}?category=${this.category}&country=${'in'}&apiKey=${C.API_KEY}&pageSize=${18}&page=${this.page_no}`
+    this.fetchNews(this.url)
+  }
+
   private fetchNews = async (fetchURL: string) : Promise<void> => {
     this.temp = (await (await fetch(fetchURL)).json()).articles
     let i = 0
     let tempSize3: [] = []
     for (let i = 0; i < this.temp.length; i++) {
-      if(i == 0) {
-        this.newsResult.pop()
+      if(i == 0 && this.page_no === 1) {
+        console.log("Popping");
+        this.newsResult.pop();
       }
       if(i !== 0 && i%3 === 0) {
         this.newsResult.push(tempSize3)
@@ -60,8 +68,9 @@ export class NewsContainerComponent implements OnInit {
       tempSize3.push(this.temp[i]);
       
     }
+    
     this.newsResult.push(tempSize3)
-    console.log(this.newsResult)
+    // console.log(this.newsResult)
   }
 
 }

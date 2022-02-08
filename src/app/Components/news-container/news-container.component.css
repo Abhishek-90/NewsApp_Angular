@@ -10,3 +10,10 @@
     /* background-color: bisque; */
     margin-bottom: 4rem;
 }
+
+.load-more-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
