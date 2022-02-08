@@ -1,15 +1,12 @@
-import { createReducer, on } from "@ngrx/store";
-import { setDarkMode } from "./Actions";
+import { state } from "@angular/animations"
+import { createReducer, on } from "@ngrx/store"
+import { setDarkMode } from "./Actions"
 
-interface darkModeState {
-    enabled: boolean;
-}
-
-const initialState: darkModeState = {
-    enabled: false
+export const initialState = {
+    enabled: false,
 }
 
 export const DarkModeReducer = createReducer(
     initialState,
-    on(setDarkMode, (state: darkModeState) => ({...state, enabled: !state.enabled}))
+    on(setDarkMode, (state) => {return {...state, enabled: !state.enabled}}),
 )

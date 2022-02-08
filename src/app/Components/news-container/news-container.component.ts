@@ -16,7 +16,7 @@ export class NewsContainerComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.url = `${C.Endpoint_Top_Headlines}?category=${this.category}&country=${'in'}&apiKey=${C.API_KEY}`
+    this.url = `${C.Endpoint_Top_Headlines}?category=${this.category}&country=${'in'}&apiKey=${C.API_KEY}&pageSize=18`
     this.fetchNews(this.url)
       
   }

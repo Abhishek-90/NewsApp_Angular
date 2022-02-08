@@ -1,6 +1,6 @@
 <div class="news-container tab-group-div">
-    <mat-tab-group class="tab-group" color="primary">
-        <mat-tab label="General"><app-news-container category="general"></app-news-container> </mat-tab>
+    <mat-tab-group [ngClass]=" enabled ? 'tab-group-dark' : 'tab-group-light'">
+        <mat-tab [ngClass]=" enabled ? 'tab-dark' : 'tab-light'" label="General"><app-news-container category="general"></app-news-container> </mat-tab>
         <!-- <mat-tab label="Business"><app-news-container category="business"></app-news-container> </mat-tab>
         <mat-tab label="Entertainment"><app-news-container category="entertainment"></app-news-container> </mat-tab>
         <mat-tab label="Health"><app-news-container category="health"></app-news-container> </mat-tab>

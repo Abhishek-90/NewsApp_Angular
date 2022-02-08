@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NewsContainerComponent } from '../news-container/news-container.component';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -7,9 +8,14 @@ import { NewsContainerComponent } from '../news-container/news-container.compone
 })
 
 export class NavbarComponent implements OnInit {
-  constructor() {}
+  enabled: boolean | undefined
+
+  constructor(private store: Store<{darkmode: { enabled: boolean }}>) {}
 
   ngOnInit(): void {
+    this.store.select('darkmode').subscribe((data) => {
+      this.enabled = data.enabled;
+    })
   }
 
 }
