@@ -18,6 +18,7 @@ export class SettingsPanelComponent implements OnInit {
   handleDarkMode = ():void => {
     // console.log(this.enabled)
     this.store.dispatch(setDarkMode())
+    localStorage.setItem('darkMode', this.enabled ? 'true' : 'false')
     this.enabled = !this.enabled
   }
 

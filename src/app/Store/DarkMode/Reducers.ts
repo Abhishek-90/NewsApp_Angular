@@ -1,9 +1,8 @@
-import { state } from "@angular/animations"
 import { createReducer, on } from "@ngrx/store"
 import { setDarkMode } from "./Actions"
 
 export const initialState = {
-    enabled: false,
+    enabled: localStorage.getItem('darkMode') === 'true',
 }
 
 export const DarkModeReducer = createReducer(
