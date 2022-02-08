@@ -9,7 +9,8 @@
         </a>
         
         <mat-card-subtitle [ngClass]=" enabled ? 'news-sub-dark' : 'news-sub-light'" style="font-size: 1em;">
-            Source : {{newsAuthor}}
+            Source : {{newsAuthor}}<br>
+            Date : {{date | date}}
         </mat-card-subtitle>
         
         <mat-card-content style="font-size: 1.2rem;">

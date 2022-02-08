@@ -2,12 +2,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: rgb(204, 201, 201);
 }
 
 .news-container-dark {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #636060;
+    background-color: #535353;
 }

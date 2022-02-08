@@ -14,6 +14,7 @@ export class NewsItemComponent implements OnInit {
   @Input() newsDescription: string = ""
   @Input() imageUrl: string = ""
   @Input() newsUrl: string = ""
+  @Input() date: string = ""
   enabled:boolean | undefined 
 
   constructor( private store: Store<{ darkmode: { enabled: boolean }}>) { 
@@ -22,6 +23,7 @@ export class NewsItemComponent implements OnInit {
   ngOnInit(): void {
     this.newsTitle = `${this.newsTitle.length > 20 ? this.newsTitle.substring(0,20)+'...': this.newsTitle}`
     this.newsAuthor = this.newsAuthor || "Source Unknown"
+
     this.store.select('darkmode').subscribe(data => {
       this.enabled = data.enabled
     })

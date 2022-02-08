@@ -41,6 +41,10 @@ export class NewsContainerComponent implements OnInit {
     return item.urlToImage
   }
 
+  getNewsDate(item: any) : string {
+    return item.publishedAt
+  }
+
   private fetchNews = async (fetchURL: string) : Promise<void> => {
     this.temp = (await (await fetch(fetchURL)).json()).articles
     let i = 0
