@@ -2,3 +2,11 @@ mat-slide-toggle {
     float: right;
     margin-right: 2em;
 }
+
+.settings-panel {
+    height: 3rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    font-size: 1.2em;
+}
