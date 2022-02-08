@@ -16,10 +16,10 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    if(!localStorage.getItem('darkMode')) {
+    if(!localStorage.getItem('darkMode') || (localStorage.getItem('darkMode') !== "true" && localStorage.getItem('darkMode') !== "false")) {
       localStorage.setItem('darkMode', "false");
     }
-    
+
     this.store.select('darkmode').subscribe(data => {
       this.enabled = data.enabled
     })
