@@ -1,5 +1,7 @@
-<div class="news-list" *ngFor="let itemArray of newsResult">
-    <div class="news-item-row" *ngFor="let item of itemArray">
-        <app-news-item newsTitle={{getNewsTitle(item)}} newsDescription={{getNewsDescription(item)}} newsAuthor={{getNewsAuthor(item)}} imageUrl={{getNewsImageURl(item)}} newsUrl={{getNewsURL(item)}} date={{getNewsDate(item)}}></app-news-item>
+<div class="news-container">
+    <div class="news-list" *ngFor="let itemArray of newsResult">
+        <div class="news-item-row" *ngFor="let item of itemArray">
+            <app-news-item newsTitle={{getNewsTitle(item)}} newsDescription={{getNewsDescription(item)}} newsAuthor={{getNewsAuthor(item)}} imageUrl={{getNewsImageURl(item)}} newsUrl={{getNewsURL(item)}} date={{getNewsDate(item)}}></app-news-item>
+        </div>
     </div>
 </div>
