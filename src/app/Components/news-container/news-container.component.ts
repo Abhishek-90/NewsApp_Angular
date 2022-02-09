@@ -17,7 +17,7 @@ export class NewsContainerComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.url = `${C.Endpoint_Top_Headlines}?category=${this.category}&country=${'in'}&apiKey=${C.API_KEY}&pageSize=18&page=${this.page_no}`
+    this.url = `${C.Endpoint_Top_Headlines}?category=${this.category}&country=${'in'}&apiKey=${C.API_KEY}&page=${this.page_no}&pageSize=18`
     this.fetchNews(this.url)
       
   }
@@ -48,7 +48,7 @@ export class NewsContainerComponent implements OnInit {
 
   loadMore = ():void => {
     this.page_no += 1
-    this.url = `${C.Endpoint_Top_Headlines}?category=${this.category}&country=${'in'}&apiKey=${C.API_KEY}&pageSize=${18}&page=${this.page_no}`
+    this.url = `${C.Endpoint_Top_Headlines}?category=${this.category}&country=${'in'}&apiKey=${C.API_KEY}&page=${this.page_no}&pageSize=${18}`
     this.fetchNews(this.url)
   }
 
@@ -58,7 +58,6 @@ export class NewsContainerComponent implements OnInit {
     let tempSize3: [] = []
     for (let i = 0; i < this.temp.length; i++) {
       if(i == 0 && this.page_no === 1) {
-        console.log("Popping");
         this.newsResult.pop();
       }
       if(i !== 0 && i%3 === 0) {
@@ -70,7 +69,6 @@ export class NewsContainerComponent implements OnInit {
     }
     
     this.newsResult.push(tempSize3)
-    // console.log(this.newsResult)
   }
 
 }
